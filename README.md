@@ -41,17 +41,17 @@ This template provides a Ubuntu 25.04 development environment configured with co
 
 ## 🚀 Motivation
 
-This template was created to decouple development environments from Microsoft's devcontainer prebuilt images. Those images often contain unnecessary complexity, which can lead to difficult to debug at times.
+This template was created to decouple development environments from Microsoft's devcontainer prebuilt images. Those images often contain unnecessary complexity, which can make debugging difficult at times.
 
-By contrast, this template:
+By contrast, this template offers several advantages:
 - Starts from a clean Ubuntu 25.04 base image
 - Installs only the tools you need
-- You know the source from where you are installing
+- Provides transparency into installation sources
 - Avoids unnecessary layers
-- Provides faster build times
-- Result is in your control
+- Offers faster build times
+- Gives you complete control over the environment
 
-This approach gives you more control over your development environment while maintaining all the benefits of containerization.
+This approach provides better control and transparency over your development environment while maintaining all the benefits of containerization.
 
 ## 🧩 Included VSCode Extensions
 
