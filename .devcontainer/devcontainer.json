@@ -1,0 +1,49 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+    "name": "Ubuntu",
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "LOCAL_USER" : "${localEnv:USER}",
+            "CMAKE_VERSION" : "latest",
+            "UV_VERSION" : "latest",
+            "NODE_VERSION" : "latest",
+            "GOLANG_VERSION" : "latest",
+            "RUST_VERSION" : "latest"
+        }
+    },
+
+    // Use 'mounts' to map local user's SSH and Git configuration
+    "mounts": [
+        "source=${localEnv:HOME}/.ssh,target=/home/${localEnv:USER}/.ssh,type=bind,consistency=cached,readonly",
+        "source=${localEnv:HOME}/.gitconfig,target=/home/${localEnv:USER}/.gitconfig,type=bind,consistency=cached,readonly"
+    ],
+
+    // Use 'postCreateCommand' to set proper permissions for SSH directory
+    // "postCreateCommand": "chmod 700 ~/.ssh && chmod 600 ~/.ssh/*",
+
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    // "features": {},
+
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
+
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "uname -a",
+
+    // Configure tool-specific properties.
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "RooVeterinaryInc.roo-cline",
+                "kilocode.kilo-code",
+                "google.geminicodeassist"
+            ]
+        }
+    },
+
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    "remoteUser": "${localEnv:USER}"
+}
