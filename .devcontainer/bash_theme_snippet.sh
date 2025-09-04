@@ -1,3 +1,5 @@
+# Copied from: https://github.com/devcontainers/features/blob/main/src/common-utils/scripts/bash_theme_snippet.sh
+# - Removed github /codepscaed garbage.
 # bash theme - partly inspired by robbyrussell.zsh-theme
 __bash_prompt() {
     local userpart='`export XIT=$? \
